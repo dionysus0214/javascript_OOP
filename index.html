@@ -1,0 +1,16 @@
+<p id="hello">안녕</p>
+<button id="button">버튼</button>
+
+<script>
+  document.getElementById("button").addEventListener("click", () => {
+    작명("메롱");
+  });
+
+  function 작명(파라미터) {
+    document.getElementById("hello").innerHTML = 파라미터;
+  }
+
+  [1, 2, 3, 4].forEach(function (a) {
+    console.log("a");
+  });
+</script>
