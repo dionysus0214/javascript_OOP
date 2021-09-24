@@ -1,0 +1,28 @@
+<div></div>
+
+<script>
+  // 그냥 쓰거나 일반 함수 안에서 쓰면 {window}
+  // 함수나 변수를 전역공간에서 만들면 {window}에 보관
+  'use strict'
+
+  console.log(this)
+
+  function 함수() {
+    console.log(this)
+  }
+
+  함수()
+</script>
+
+<script>
+  // 오브젝트 내 함수 안에서 쓰면 '그 함수를 가지고 있는 오브젝트'를 뜻함
+  var object = {
+    data: {
+      func: () => { // 신문법 arrow function 특징: this 값을 함수 밖에 있던 거 그대로  씀
+        console.log(this)
+      }
+    }
+  }
+
+  object.data.func()
+</script>
