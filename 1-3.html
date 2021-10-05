@@ -1,0 +1,38 @@
+<div>
+  <button id="버튼">버튼</button>
+</div>
+
+<script>
+  let something = {};
+
+  // 3. 기계 안에서 쓰면 새로 생성되는 object를 뜻함
+  function machine() {
+    this.name = "Kim"; // 새로 생성되는 object(instance)
+  }
+
+  let instance = new machine();
+
+  // 4. 이벤트리스너 안에서는 e.currentTarget
+  document.getElementById("버튼").addEventListener("click", function () {
+    console.log(this);
+
+    let array = [1, 2, 3];
+    array.forEach(function (a) {
+      console.log(this); // window 3번
+    });
+  });
+
+  let object = {
+    names: ["김", "이", "박"],
+    func: function () {
+      object.names.forEach(function () {
+        console.log(this); // window 3번
+      });
+      object.names.forEach(() => {
+        console.log(this); // names: Array(3) 3번
+        // arrow function은 내부의 this 값을 변화시키지 않음(외부 this값 그대로 재사용)
+      });
+    },
+  };
+  object.func();
+</script>
