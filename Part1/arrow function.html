@@ -1,0 +1,20 @@
+<div></div>
+
+<script>
+  // 함수를 사용하는 이유
+  // 1. 코드들을 기능으로 묶고 싶을 때 사용
+  // 2. 입출력 기계를 만들고 싶을 때 사용
+
+  // arrow function 장점
+  // 1. 입출력 기계 만들 때 보기 쉬움
+  // 2. 파라미터 1개면 소괄호 생략 가능, 코드 한 줄이면 중괄호도 생략 가능
+  var func = (a) => console.log(a + 10);
+  func(5);
+
+  [1, 2, 3, 4].forEach((a) => console.log(a));
+
+  // arrow function의 특징: 바깥의 this를 내부에서 그대로 사용
+  document.getElementById("버튼").addEventListener("click", (e) => {
+    this; // 바깥의 this(window)
+  });
+</script>
