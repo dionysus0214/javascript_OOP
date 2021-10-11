@@ -1,0 +1,29 @@
+<div></div>
+
+<script>
+  // var: 재선언 가능, 재할당 가능, 범위 function
+  var name = "Kim";
+  name = "Lee";
+  var name;
+
+  function 함수() {
+    var 이름 = "Kim";
+    이름;
+  }
+  이름; // not defined error
+
+  // let: 재선언 불가능, 재할당 가능, 범위 {}
+  let age = 23;
+  age = 24;
+
+  for (let v = 1; v++; ) {
+    // v는 for 안에서만 존재
+  }
+
+  // const: 재선언 불가능, 재할당 불가능, 범위 {}
+  const 사람 = { 이름: "Kim" };
+  Object.freeze(사람); // 수정불가능한 object
+  사람.이름 = "Park"; // 결과값은 'Kim'
+
+  // 변수의 Hoisting: 변수의 선언을 변수 범위 맨위로 끌고오는 현상
+</script>
