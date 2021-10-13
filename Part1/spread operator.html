@@ -1,0 +1,40 @@
+<div></div>
+
+<script>
+  // ...는 중괄호, 대괄호, 소괄호 안에서만 사용 가능
+
+  // ... 용법
+  // 1. array에 붙이면 대괄호를 제거
+  var array = ["hello", "world"];
+  console.log(...array);
+
+  // 2. 문자에 붙이면 문자를 하나씩 해체해 펼침
+  var text = "hello";
+  console.log(...text);
+
+  var a = [1, 2, 3];
+  var b = [4, 5];
+  var c = [...a, ...b];
+  console.log(c); // [1, 2, 3, 4, 5]
+
+  // deep copy할 때 유용
+  // 각각 독립적인 값을 가지도록 array, object를 복사할 때 spread operator 사용
+  var x = [1, 2, 3];
+  var y = [...x];
+  x[3] = 4;
+  console.log(x);
+  console.log(y);
+
+  var o1 = { a: 1, b: 2 };
+  var o2 = { ...o1, c: 3 };
+  var o3 = { a: 4, ...o1 };
+  console.log(o2);
+  console.log(o3); // 값 중복될 경우, 가장 뒤에 있는 것 사용
+
+  // 3. 함수 파라미터 넣을 때
+  function plus(a, b, c) {
+    console.log(a + b + c);
+  }
+  var array = [10, 20, 30];
+  plus(...array);
+</script>
