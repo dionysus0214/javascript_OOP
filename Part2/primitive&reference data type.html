@@ -1,0 +1,14 @@
+<div></div>
+
+<script>
+  // primitive: 변수에 값이 그대로 저장
+  // reference: 변수에 reference가 저장, array, object는 변수에 값이 저장되지 않음
+  var 이름1 = { name: "김" };
+  var 이름2 = 이름1;
+  이름1.name = "박";
+  console.log(이름2); // 김
+
+  var 이름1 = { name: "김" };
+  var 이름2 = { name: "김" };
+  이름1 == 이름2; // false
+</script>
