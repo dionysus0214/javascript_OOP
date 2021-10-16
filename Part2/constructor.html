@@ -1,0 +1,18 @@
+<div></div>
+
+<script>
+  // 비슷한 object를 여러개 만들 때 constructor라는 object 생성 기계 만들면 됨
+  function Student(이름, 나이) {
+    this.name = 이름;
+    this.age = 나이;
+    this.sayHi = function () {
+      console.log("안녕 나는 " + this.name + "이야! " + this.age + "살이지!");
+    };
+  }
+  // this: 기계에서 새로 생성되는 object(instance)
+  // Student(기계) : object 생성 기계(constructor, 생성자)
+  var 학생1 = new Student("김", 15);
+  var 학생2 = new Student("정", 17);
+  학생1.sayHi();
+  학생2.sayHi();
+</script>
