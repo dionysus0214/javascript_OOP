@@ -1,0 +1,9 @@
+<div></div>
+
+<script>
+  // 상속 기능을 구현하는 ES5 방법: Object.create(부모object)
+  var 부모 = { name: "Kim", age: 50 };
+  var 자식 = Object.create(부모);
+  자식.age = 20;
+  var 손자 = Object.create(자식);
+</script>
