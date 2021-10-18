@@ -1,0 +1,35 @@
+<div></div>
+
+<script>
+  // 상속을 구현하는 ES6 방법: class
+  // 객체지향 문법은 object를 여러개 만들어 쓰려고 하는 것
+  class 부모 {
+    constructor() {
+      this.name = "Kim";
+      this.sayHi = function () {
+        console.log("Hello");
+      };
+    }
+  }
+
+  var 자식 = new 부모();
+  자식.__proto__;
+  Object.getPrototypeOf(자식);
+
+  class 할아버지 {
+    constructor(name) {
+      this.age = 70;
+      this.name = name;
+    }
+  }
+  var 할아버지1 = new 할아버지("만덕");
+
+  // super(): 물려받는 class의 constructor
+  class 아버지 extends 할아버지 {
+    constructor(name) {
+      super(name);
+      this.address = "Seoul";
+    }
+  }
+  var 아버지1 = new 아버지("만수");
+</script>
