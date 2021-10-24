@@ -1,6 +1,7 @@
 <div></div>
 
 <script>
+  // Synchronous: 자바스크립트는 한 번에 코드 한 줄씩 차례로 실행
   console.log(1);
   setTimeout(function () {
     console.log(2);
@@ -8,12 +9,12 @@
   console.log(3);
 
   function 첫째함수(콜백) {
-    console.log(1);
+    console.log(10);
     콜백();
   }
 
   function 둘째함수() {
-    console.log(2);
+    console.log(20);
   }
 
   첫째함수(둘째함수);

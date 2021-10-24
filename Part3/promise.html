@@ -1,0 +1,18 @@
+<div></div>
+
+<script>
+  var promise = new Promise(function (resolve, reject) {
+    // 성공하면 resolved, 판정대기중이면 pending, 실패하면 rejected
+    var 연산 = 1 + 1;
+    resolve(연산);
+    // reject();
+  });
+
+  promise
+    .then(function (결과) {
+      console.log(결과);
+    })
+    .catch(function () {
+      console.log("실패");
+    });
+</script>
