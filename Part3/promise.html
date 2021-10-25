@@ -1,5 +1,8 @@
-<div></div>
+<div>
+  <img id="test" src="https://codingapple1.github.io/kona.jpg" />
+</div>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
   var promise = new Promise(function (resolve, reject) {
     // 성공하면 resolved, 판정대기중이면 pending, 실패하면 rejected
@@ -15,4 +18,42 @@
     .catch(function () {
       console.log("실패");
     });
+
+  // 연습문제 1
+  var 이미지로딩 = new Promise(function (성공, 실패) {
+    var img = document.querySelector("#test");
+    img.addEventListener("load", function () {
+      성공();
+    });
+    img.addEventListener("error", function () {
+      실패();
+    });
+  });
+  이미지로딩
+    .then(function () {
+      console.log("로딩 성공");
+    })
+    .catch(function () {
+      console.log("로딩 실패");
+    });
+
+  // 연습문제 2
+  var promise = ajax함수("https://codingapple1.github.io/hello.txt");
+
+  promise
+    .then(function (결과) {
+      console.log(결과);
+      return ajax함수("https://codingapple1.github.io/hello2.txt");
+    })
+    .then(function (결과) {
+      console.log(결과);
+    });
+
+  function ajax함수(URL) {
+    return new Promise((성공, 실패) => {
+      $.get(URL).done(function (결과) {
+        성공(결과);
+      });
+    });
+  }
 </script>
