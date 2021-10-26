@@ -1,0 +1,20 @@
+<div></div>
+
+<script>
+  // async를 function 앞에 붙이면 함수가 promise 역할 가능
+  async function add() {
+    var promise = new Promise(function (success, fail) {
+      var 힘든연산 = 1 + 1;
+      success(100);
+    });
+    // await는 async function 안에서 then 대신 사용
+    // await는 promise 실패 시 에러나고 멈춤
+    try {
+      var result = await promise;
+      console.log(result);
+    } catch {
+      console.log("Ooooops");
+    }
+  }
+  add();
+</script>
