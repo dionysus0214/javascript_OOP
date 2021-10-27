@@ -1,0 +1,25 @@
+<script>
+  // 반복문은 1. 코드 여러번 실행 시 2. array, object에서 자료 꺼낼 때 사용
+
+  // forEach(): array 적용
+  // [1, 2, 3].forEach();
+
+  // for in: object 전용
+  // 특징: enumerable한 것만 반복, 부모의 prototype도 반복, object 자료형에만 쓰임
+  class 부모 {}
+  부모.prototype.name = "Park";
+  var 오브젝트 = new 부모();
+
+  // var 오브젝트 = { name: "Kim", age: 30 };
+  // Object.getOwnPropertyDescriptor(오브젝트, "name");
+  for (var key in 오브젝트) {
+    console.log(오브젝트[key]);
+  }
+
+  // for of: iterable 전용
+  // 특징: iterable한 자료형에만 사용 가능,
+  var 어레이 = [1, 3, 5, 7];
+  for (var 자료 of 어레이) {
+    console.log(자료);
+  }
+</script>
