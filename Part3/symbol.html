@@ -1,0 +1,21 @@
+<div></div>
+
+<script>
+  // Symbol(): 주석만 저장할 수 있는 자료형, ES6부터 Symbol도 key값으로 입력 가능
+  // Symbol은 반복문에서 감지하지 못함
+  var person = { name : 'Kim' };
+  person.weight = 100;
+  var weight = Symbol('내 진짜 몸무게');
+  person[weight] = 200;
+  console.log(person);
+
+  // 특징: 1. Symbol()은 각각 유니크
+  var a = Symbol('설명1');
+  var b = Symbol('설명1');
+  console.log(a === b);
+
+  // 2. Symbol.for()로 전역 심볼 제작 가능
+  var a = Symbol.for('설명1');
+  var b = Symbol.for('설명1');
+  console.log(a === b);
+</script>
