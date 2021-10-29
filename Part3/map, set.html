@@ -1,0 +1,31 @@
+<div></div>
+
+<script>
+  // Map 자료형: 자료간의 연관성을 표현
+  var person = new Map();
+  person.set("name", "Kim");
+  person.set("age", 30);
+  person.get("age");
+  person.delete("age");
+  person.size;
+
+  var person2 = new Map([
+    ["name", "Lee"],
+    ["age", 22],
+  ]);
+
+  for (var key of person.keys()) {
+    console.log(key);
+  }
+
+  // Set 자료형: 중복 자료를 허용하지 않는 array
+  var 출석부 = new Set(["john", "tom", "andy", "tom"]);
+  출석부.add("jully");
+  출석부.delete("andy");
+  출석부.size;
+
+  // set 자료형을 array 자료형으로 변환
+  var 출석부 = ["john", "tom", "andy", "tom"];
+  var 출석부2 = new Set(["john", "tom", "andy", "tom"]);
+  출석부 = [...출석부2];
+</script>
