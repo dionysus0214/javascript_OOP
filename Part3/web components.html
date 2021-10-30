@@ -1,0 +1,21 @@
+<body>
+  <custom-input name="비번"></custom-input>
+</body>
+
+<script>
+  class 클래스 extends HTMLElement {
+    connectedCallback() {
+      let name = this.getAttribute("name");
+      this.innerHTML = `<label>${name}</label><input>`;
+    }
+    static get observedAttributes() {
+      return ["name"];
+    }
+    attributeChangedCallback() {
+      console.log(this.getAttribute("name"));
+      this.innerHTML = `<label>${name}</label><input>`;
+    }
+  }
+
+  customElements.define("custom-input", 클래스);
+</script>
